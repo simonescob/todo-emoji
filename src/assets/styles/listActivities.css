@@ -1,0 +1,11 @@
+.list{
+}
+
+.list-width{
+  width: 30vw;
+}
+
+.list-item{
+  padding: 15px 20px;
+  border-bottom: 1px #b1b1b1 solid;
+}

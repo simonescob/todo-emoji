@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Inputs from './components/input/input';
+import ListActivities from './components/list/ListActivities';
 import './App.css';
+import AppContext, { Activity } from './components/AppContext';
 
 function App() {
+  const [ activities, setActivities ] = useState<Activity[]>([]);
+
   return (
+    <AppContext.Provider value={{activities, setActivities}}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Inputs/>
+      <ListActivities/>
     </div>
+    </AppContext.Provider>
   );
+
 }
 
 export default App;
