@@ -1,5 +1,4 @@
-import React, { ChangeEvent, useState, useContext, FunctionComponent } from 'react';
-import AppContext from '../AppContext';
+import React, { FunctionComponent } from 'react';
 import Modal from './Modal'; 
 
 export interface ModalProps {
