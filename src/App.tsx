@@ -5,6 +5,8 @@ import './App.css';
 import AppContext, { Activity } from './components/AppContext';
 
 function App() {
+
+  // initial state and setState of context activity
   const [ activities, setActivities ] = useState<Activity[]>([]);
 
   return (

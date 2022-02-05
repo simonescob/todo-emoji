@@ -1,13 +1,13 @@
 .App {
-  padding: 0 30%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .App-logo {
 }
 
 .App-header {
+}
+
+@media (max-width: 450px){
+  .App {
+  }
 }
