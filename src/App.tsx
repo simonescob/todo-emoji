@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Inputs from './components/input/input';
 import ListActivities from './components/list/ListActivities';
-import './App.css';
+import './assets/styles/App.css';
 import AppContext, { Activity } from './components/AppContext';
 
 function App() {
