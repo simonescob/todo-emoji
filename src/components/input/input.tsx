@@ -1,17 +1,12 @@
 import React, { ChangeEvent, useState, useContext } from 'react';
 import '../../assets/styles/input.css';
 import AppContext from '../AppContext';
-// import { Container } from 'react-dom';
 
 export default function Inputs(){
 
   const { activities, setActivities } = useContext(AppContext);
 
   const [ input, setInput ] = useState("");
-
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   let searchActivity = (): void => {
     console.log("lista de actividades", activities);
