@@ -31,12 +31,11 @@ export default function Inputs(){
   // function change input value
   let handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
+
+    if(e.target.value === ""){
+      setActivities(searchActivities);
+    }
   };
-  
-  // function change context list about search
-  useEffect(() => {
-    setActivities(search);
-  }, [input === ""])
 
   return (
     <div className="space centered">
