@@ -11,10 +11,10 @@ function App() {
 
   return (
     <AppContext.Provider value={{activities, setActivities}}>
-    <div className="App">
-      <Inputs/>
-      <ListActivities/>
-    </div>
+      <div className="App">
+        <Inputs/>
+        <ListActivities/>
+      </div>
     </AppContext.Provider>
   );
 

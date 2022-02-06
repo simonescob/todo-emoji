@@ -4,23 +4,36 @@ import { Activity } from '../AppContext';
 import AppContext from '../AppContext';
 import ModalCreateActivity from '../Modal/ModalCreateActivity'; 
 
+
+// input function 
 export default function Inputs(){
 
+  // function for change contexto
   const { setActivities } = useContext(AppContext);
+  
+  // search state
   const [ input, setInput ] = useState("");
-  const [ modalOpen, setOpenModal ] = useState(false);
 
+  // open modal state
+  const [ modalOpen, setOpenModal ] = useState(false);
+  
+  // variable get data from sessionStorage
   const searchActivities = JSON.parse(sessionStorage.getItem("activities") || '{}');
+  
+  // variable filter data from sessionStorage
   const search = searchActivities.filter((activity: Activity) => activity.name.includes(input) || activity.emoji.includes(input) );
 
+  // function change context list about search
   let searchActivity = (): void => {
     setActivities(search);
   };
-
+  
+  // function change input value
   let handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
-
+  
+  // function change context list about search
   useEffect(() => {
     setActivities(search);
   }, [input === ""])
