@@ -1,22 +1,29 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
 import '../../assets/styles/input.css';
-// import AppContext from '../AppContext';
+import { Activity } from '../AppContext';
+import AppContext from '../AppContext';
 import ModalCreateActivity from '../Modal/ModalCreateActivity'; 
 
 export default function Inputs(){
 
-  // const { activities, setActivities } = useContext(AppContext);
+  const { setActivities } = useContext(AppContext);
   const [ input, setInput ] = useState("");
-
   const [ modalOpen, setOpenModal ] = useState(false);
 
+  const searchActivities = JSON.parse(sessionStorage.getItem("activities") || '{}');
+  const search = searchActivities.filter((activity: Activity) => activity.name.includes(input) || activity.emoji.includes(input) );
+
   let searchActivity = (): void => {
-    // console.log("lista de actividades", activities);
+    setActivities(search);
   };
 
   let handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
+
+  useEffect(() => {
+    setActivities(search);
+  }, [input === ""])
 
   return (
     <div className="space centered">
@@ -27,9 +34,9 @@ export default function Inputs(){
       >
       </ModalCreateActivity>
 
-      <h2 className="center">
+      <div className="center title">
         Todo Emojis
-      </h2>
+      </div>
       <div className="search">
         <input type="text" className="input-search" onChange={e => handleChange(e)} placeholder="Buscar actividad" value={input} />
         <button 

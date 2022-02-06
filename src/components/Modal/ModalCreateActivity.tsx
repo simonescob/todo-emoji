@@ -28,6 +28,8 @@ const ModalCreateActivity: FunctionComponent<ModalProps> = ({handleClose, show})
       setEmoji("");
       handleClose();
     }
+    sessionStorage.setItem("activities", JSON.stringify(activities.concat({name: input, emoji: emoji})))
+
   }
 
   return (
