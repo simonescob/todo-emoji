@@ -1,17 +1,17 @@
 import React, { ChangeEvent, useState, useContext } from 'react';
 import '../../assets/styles/input.css';
-import AppContext from '../AppContext';
+// import AppContext from '../AppContext';
 import ModalCreateActivity from '../Modal/ModalCreateActivity'; 
 
 export default function Inputs(){
 
-  const { activities, setActivities } = useContext(AppContext);
+  // const { activities, setActivities } = useContext(AppContext);
   const [ input, setInput ] = useState("");
 
   const [ modalOpen, setOpenModal ] = useState(false);
 
   let searchActivity = (): void => {
-    console.log("lista de actividades", activities);
+    // console.log("lista de actividades", activities);
   };
 
   let handleChange = (e: ChangeEvent<HTMLInputElement>) => {
