@@ -18,13 +18,14 @@ export default function Inputs(){
   const [ modalOpen, setOpenModal ] = useState(false);
   
   // variable get data from sessionStorage
-  const searchActivities = JSON.parse(sessionStorage.getItem("activities") || '{}');
+  const searchActivities = JSON.parse(sessionStorage.getItem("activities") || '{}') || [];
   
-  // variable filter data from sessionStorage
-  const search = searchActivities.filter((activity: Activity) => activity.name.includes(input) || activity.emoji.includes(input) );
-
+  
   // function change context list about search
   let searchActivity = (): void => {
+    // variable filter data from sessionStorage
+    const search = searchActivities.filter((activity: Activity) => activity.name.includes(input) || activity.emoji.includes(input) );
+
     setActivities(search);
   };
   
