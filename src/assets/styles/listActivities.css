@@ -1,17 +1,33 @@
 .list{
-}
-
-.list-width{
-  width: 30vw;
+  /* border: solid; */
+  width: 40vw;
 }
 
 .list-item{
+  display: flex;
+  flex-direction: row;
   padding: 15px 20px;
   border-bottom: 1px #b1b1b1 solid;
 }
 
+.list-item-text{
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.list-btn-remove{
+  border: none;
+  padding: 12px 15px;
+  border-radius: 30px;
+  background-color: #3D96FF;
+  cursor: pointer;
+  color: white;
+}
+
 @media (max-width: 450px){
   .list-width{
-    width: 70vw;
+    width: 80vw;
   }
 }

@@ -12,19 +12,11 @@ export default function Inputs(){
 
   let searchActivity = (): void => {
     console.log("lista de actividades", activities);
-    setOpenModal(true);
   };
 
   let handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
-
-  let saveActivity = () => {
-    if(input !== ""){
-      setActivities(activities.concat({name: input, emoji: "😁"}));
-      setInput("");
-    }
-  }
 
   return (
     <div className="space centered">
@@ -33,7 +25,6 @@ export default function Inputs(){
         handleClose={() => setOpenModal(false)}
         show={modalOpen}
       >
-        <p>hello</p>
       </ModalCreateActivity>
 
       <h2 className="center">
@@ -47,7 +38,7 @@ export default function Inputs(){
           onClick={() => searchActivity()} 
           type="submit">Buscar</button>
       </div>
-      <button className="style-button" onClick={saveActivity} type="submit">Agregar actividad</button>
+      <button className="style-button" onClick={() => setOpenModal(true)} type="submit">Agregar actividad</button>
     </div>
   );
 

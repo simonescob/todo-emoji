@@ -9,12 +9,12 @@
   padding-bottom: 70px; 
 }
 
-.input-search input{
+input.input-search{
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
   border: none;
-  border: 1px #b1b1b1 solid
+  border: 1px #b1b1b1 solid;
 }
 
 .style-button{
@@ -24,4 +24,5 @@
   background-color: #3D96FF;
   color: white;
   font-size: 15px;
+  cursor: pointer;
 }

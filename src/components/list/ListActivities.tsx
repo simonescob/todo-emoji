@@ -21,7 +21,7 @@ export default function ListActivities() {
           Array.isArray(activities) && activities.length > 0 ?
           activities.map((activity, i) => 
             <div key={i} className="list-item">
-              {activity.name} - {activity.emoji} <button className="remove" onClick={() => removeActivity(i)}>X</button>
+              <div className="list-item-text">{activity.emoji} | {activity.name}</div> <button className="list-btn-remove" onClick={() => removeActivity(i)}>X</button>
             </div>
           )
           : <h3>No hay actividades</h3>
