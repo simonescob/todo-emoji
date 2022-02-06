@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
+import React, { ChangeEvent, useContext, useState } from 'react';
 import '../../assets/styles/input.css';
 import { Activity } from '../AppContext';
 import AppContext from '../AppContext';
