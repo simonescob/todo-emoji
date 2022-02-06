@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState, useContext } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import '../../assets/styles/input.css';
 // import AppContext from '../AppContext';
 import ModalCreateActivity from '../Modal/ModalCreateActivity'; 
